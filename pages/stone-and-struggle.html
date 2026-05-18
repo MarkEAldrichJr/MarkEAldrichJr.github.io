@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stone and Struggle — Mark Aldrich</title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Mark<span>Aldrich</span></a>
+      <div class="nav-right">
+        <a href="../index.html"   class="nav-back"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../contact.html" class="nav-about">Contact</a>
+        <a href="../about.html"   class="nav-about">About Mark</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <a href="../index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> All Projects
+    </a>
+
+    <div class="project-header">
+      <h1>Stone and Struggle</h1>
+      <p class="subtitle">A MASSIVE scale rpg made with Unity ECS and assisted by Claude</p>
+      <div class="tag-row">
+        <span class="tag accent">Game</span>
+        <span class="tag">Indie</span>
+        <span class="tag">202X</span>
+      </div>
+    </div>
+
+    <img src="../images/stone-and-struggle-banner.png" alt="a white bean stands on a stone block,
+    tens of thousands of grey beans move on the field before it" class="project-banner" />
+
+    <div class="project-body">
+      <div class="project-main">
+        <div class="prose">
+          <p class="placeholder-text">
+            Stone and Struggle was made to answer the question "What if the war in an open-world RPG didn't wait for the player?"
+            The answer is a massive, dynamic war operated by "Faction Director" traditional AIs that coordinate resource
+            spending and army movements, while the player marches on the ground as a soldier, an explorer, a monster hunter,
+            or a farmer.
+          </p>
+          <p class="placeholder-text">
+            The game has existed in the Unity Game Engine in various forms, finally landing on Unity ECS and Netcode for Entities.
+            As this is my first networked multiplayer game, I've tooled Claude Chat as my assistant.  I've given it access to
+            many best-practice project courtesy of Unity, and gave it instructions to respect the project's intentionality.  It's been instructed to
+            focus its efforts on educating me of any personal weak points, hunting for bugs and edge cases before they become an
+            issue, and suggesting courses of action when I'm stuck.
+          </p>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 2.5rem;">Screenshots</h2>
+        <div class="gallery">
+          <div class="gallery-item"><img src="../images/stone-and-struggle-early.png" alt="An early attempt before figuring out exactly what I wanted.  Focused on ever NPC having thoughts, morals, and needs. Quickly abandoned."></div>
+          <div class="gallery-item"><img src="../images/stone-and-struggle-first-complete.png" alt="First try at the full game.  I ended up with too many soldiers to run on modern hardware with my then knowledge on optimizations"></div>
+          <div class="gallery-item"><img src="../images/stone-and-struggle-2d-early.gif" alt="First attempt at a nature simulation, troop AI, and the overarching Faction AI."></div>
+          <div class="gallery-item"><img src="../images/stone-and-struggle-current.png" alt="Current iteration build with the help of Claude.  This one has first and third person modes, and three attack types to start Phase 1 development"></div>
+        </div>
+
+        <h2 class="section-title" style="margin-top: 2.5rem;">Video</h2>
+        <div class="video-wrap" style="max-width: 860px; margin-bottom: 2.5rem;">
+          <iframe
+                  src="https://www.youtube.com/embed/dXWSmNDXPbQ"
+                  title="Stone and Struggle 2D prototype"
+                  allowfullscreen
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+          </iframe>
+        </div>
+      </div>
+
+      <aside class="project-sidebar">
+        <div class="sidebar-card">
+          <h3>Project Info</h3>
+          <div class="info-row">
+            <span class="info-label">Type</span>
+            <span class="info-value">Indie Game</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Engine</span>
+            <span class="info-value">Unity ECS</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Status</span>
+            <span class="info-value">In Production</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Year</span>
+            <span class="info-value">2030</span>
+          </div>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>Links</h3>
+          <div class="link-stack">
+            <a href="https://markaldrichisme.itch.io/the-big-one-conceptual-prototype-1" target="_blank" rel="noopener" class="btn btn-primary">
+              <i class="fas fa-gamepad"></i> Play the prototype on Itch.io
+            </a>
+            <a href="https://www.youtube.com/watch?v=dXWSmNDXPbQ" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fab fa-youtube"></i> Watch Gameplay
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mark Aldrich &mdash; All rights reserved.</p>
+  </footer>
+
+  <script src="../js/lightbox.js"></script>
+</body>
+</html>

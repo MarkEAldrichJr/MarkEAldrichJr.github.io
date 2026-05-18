@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Dark rounded background -->
+  <rect width="32" height="32" rx="7" fill="#0b0b12"/>
+  <!-- Subtle accent border -->
+  <rect width="32" height="32" rx="7" fill="none" stroke="#8b5cf6" stroke-width="1.5"/>
+  <!-- "MA" monogram -->
+  <text
+    x="16" y="22"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="13.5"
+    font-weight="800"
+    text-anchor="middle"
+    letter-spacing="-0.5"
+    fill="#8b5cf6"
+  >MA</text>
+</svg>

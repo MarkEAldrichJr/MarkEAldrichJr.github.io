@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- EDIT: Change this to your project name -->
+  <title>Project Name — Mark Aldrich</title>
+
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+  <!-- ── Navigation ─────────────────────────────────────────── -->
+  <nav>
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">Mark<span>Aldrich</span></a>
+      <div class="nav-right">
+        <a href="../index.html"   class="nav-back"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../contact.html" class="nav-about">Contact</a>
+        <a href="../about.html"   class="nav-about">About Mark</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ── Back link (shows on mobile, duplicates nav) ─────── -->
+    <a href="../index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> All Projects
+    </a>
+
+
+    <!-- ============================================================
+      HEADER — Title, subtitle, tags
+      ─────────────────────────────────────────────────────────────
+      EDIT: Fill in the project name, a one-line subtitle,
+      and the tags that describe it (add or remove <span class="tag"> as needed).
+      Use class="tag accent" for the most important tag.
+      ============================================================ -->
+    <div class="project-header">
+      <h1>Project Name</h1>
+      <p class="subtitle">A short one-liner describing the project.</p>
+      <div class="tag-row">
+        <span class="tag accent">Game</span>      <!-- Main category tag (accent = purple) -->
+        <span class="tag">Indie</span>
+        <span class="tag">2024</span>
+        <!-- Add or remove tags freely -->
+      </div>
+    </div>
+
+
+    <!-- ============================================================
+      BANNER IMAGE  (optional)
+      ─────────────────────────────────────────────────────────────
+      TO USE: Put your image in the images/ folder (one level up),
+              delete the <div class="banner-placeholder">,
+              and uncomment the <img> line.
+
+      TO REMOVE THIS SECTION: delete both elements below.
+      ============================================================ -->
+    <div class="banner-placeholder">
+      <i class="fas fa-panorama"></i>
+      <span>Replace with banner image (wide landscape works best)</span>
+    </div>
+    <!-- <img src="../images/your-banner.jpg" alt="Project banner" class="project-banner" /> -->
+
+
+    <!-- ============================================================
+      MAIN BODY — Description (left) + Info sidebar (right)
+      ============================================================ -->
+    <div class="project-body">
+
+      <!-- ── LEFT COLUMN: Description, gallery, video ─────────── -->
+      <div class="project-main">
+
+
+        <!-- ── About section ─────────────────────────────────── -->
+        <!-- EDIT: Write as many <p> paragraphs as you like.
+             Delete class="placeholder-text" once you have real text. -->
+        <div class="prose">
+          <p class="placeholder-text">
+            [WRITE YOUR PROJECT DESCRIPTION HERE — What is this project? What inspired it?
+            What did you make or do? A few paragraphs works well.]
+          </p>
+          <p class="placeholder-text">
+            [OPTIONAL SECOND PARAGRAPH — Could cover the development process,
+            challenges you overcame, or anything else worth sharing.]
+          </p>
+
+          <!-- You can add subheadings like this: -->
+          <!-- <h2>How It Was Made</h2>
+               <p>Your text here...</p> -->
+        </div>
+
+
+        <!-- ── Gallery section ───────────────────────────────── -->
+        <!-- EDIT: Replace placeholder items with real images.
+             Add or remove items freely.
+             To add an image:
+               <div class="gallery-item">
+                 <img src="../images/screenshot1.jpg" alt="Description">
+               </div>
+             To remove the gallery: delete the whole block below.    -->
+        <h2 class="section-title" style="margin-top: 2.5rem;">Screenshots</h2>
+
+        <div class="gallery">
+
+          <div class="gallery-item placeholder">
+            <i class="fas fa-image"></i>
+            <span>Add screenshot</span>
+          </div>
+
+          <div class="gallery-item placeholder">
+            <i class="fas fa-image"></i>
+            <span>Add screenshot</span>
+          </div>
+
+          <div class="gallery-item placeholder">
+            <i class="fas fa-image"></i>
+            <span>Add screenshot</span>
+          </div>
+
+          <!-- Copy a placeholder or add <div class="gallery-item"><img ...></div> -->
+
+        </div>
+
+
+        <!-- ── Video section ─────────────────────────────────── -->
+        <!-- EDIT: To embed a YouTube video:
+               1. Open the video on YouTube
+               2. Click Share → Embed
+               3. Copy just the VIDEO ID from the URL (the part after "v=" or "/embed/")
+                  Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ  → ID = dQw4w9WgXcQ
+               4. Replace YOUR_VIDEO_ID below with that ID
+               5. Delete the <div class="video-placeholder"> block
+               6. Uncomment the <div class="video-wrap"> block
+
+             To remove this section: delete both blocks below.           -->
+        <h2 class="section-title" style="margin-top: 2.5rem;">Video</h2>
+
+        <div class="video-placeholder">
+          <i class="fab fa-youtube"></i>
+          <span>Paste your YouTube video ID into the embed below, then delete this placeholder</span>
+        </div>
+
+        <!--
+        <div class="video-wrap">
+          <iframe
+            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+            title="Project video"
+            allowfullscreen
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+          </iframe>
+        </div>
+        -->
+
+
+      </div><!-- end .project-main -->
+
+
+      <!-- ── RIGHT COLUMN: Info sidebar ───────────────────────── -->
+      <aside class="project-sidebar">
+
+
+        <!-- Info card — quick facts about the project -->
+        <!-- EDIT: Change the labels and values. Add or remove rows as needed.
+             To remove this card entirely, delete the whole <div class="sidebar-card"> block. -->
+        <div class="sidebar-card">
+          <h3>Project Info</h3>
+
+          <div class="info-row">
+            <span class="info-label">Type</span>
+            <span class="info-value">Indie Game</span>      <!-- EDIT -->
+          </div>
+          <div class="info-row">
+            <span class="info-label">Engine</span>
+            <span class="info-value">Godot</span>           <!-- EDIT or delete row -->
+          </div>
+          <div class="info-row">
+            <span class="info-label">Status</span>
+            <span class="info-value">Released</span>        <!-- EDIT -->
+          </div>
+          <div class="info-row">
+            <span class="info-label">Year</span>
+            <span class="info-value">2024</span>            <!-- EDIT -->
+          </div>
+
+          <!-- Add more rows like this:
+          <div class="info-row">
+            <span class="info-label">Label</span>
+            <span class="info-value">Value</span>
+          </div>
+          -->
+        </div>
+
+
+        <!-- Links card — buttons to external pages -->
+        <!-- EDIT: Set href="" to your actual URLs.
+             Add or remove <a class="btn"> elements freely.
+             Remove the whole sidebar-card if there are no links. -->
+        <div class="sidebar-card">
+          <h3>Links</h3>
+          <div class="link-stack">
+
+            <a href="#" target="_blank" rel="noopener" class="btn btn-primary">
+              <i class="fas fa-gamepad"></i> Play on Itch.io   <!-- EDIT text & icon -->
+            </a>
+
+            <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fab fa-youtube"></i> Watch Trailer      <!-- EDIT text & icon -->
+            </a>
+
+            <!-- More button examples:
+            <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fab fa-github"></i> Source Code
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fas fa-download"></i> Download
+            </a>
+            -->
+
+          </div>
+        </div>
+
+
+      </aside><!-- end .project-sidebar -->
+
+    </div><!-- end .project-body -->
+
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mark Aldrich &mdash; All rights reserved.</p>
+  </footer>
+
+  <script src="../js/lightbox.js"></script>
+</body>
+</html>

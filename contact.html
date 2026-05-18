@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Mark Aldrich</title>
+  <meta name="description" content="Get in touch with Mark Aldrich." />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Mark<span>Aldrich</span></a>
+      <div class="nav-right">
+        <a href="contact.html" class="nav-about active">Contact</a>
+        <a href="about.html"   class="nav-about">About Mark</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="contact-main">
+
+    <div class="contact-layout">
+
+      <!-- ── Left: form ───────────────────────────────────────── -->
+      <div class="contact-form-wrap">
+        <h1>Get in <span style="color:var(--accent)">Touch</span></h1>
+        <p class="contact-intro">
+          Have a question, a project idea, or just want to say hi?
+          Fill in the form and I'll get back to you.
+        </p>
+
+        <!-- Success banner -->
+        <div id="form-success" class="form-banner form-success" hidden>
+          <i class="fas fa-circle-check"></i>
+          Message sent! I'll get back to you soon.
+        </div>
+
+        <!-- Error banner — shows Formspree's actual error message -->
+        <div id="form-error" class="form-banner form-error" hidden>
+          <i class="fas fa-circle-exclamation"></i>
+          <span id="form-error-text">Something went wrong. Please try again or email me directly at
+          <a href="mailto:markealdrich@gmail.com">markealdrich@gmail.com</a>.</span>
+        </div>
+
+        <!-- action= is a no-JS fallback; JS intercepts and uses fetch instead -->
+        <form id="contact-form" action="https://formspree.io/f/xpqnabnv" method="POST">
+
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text"   id="name"    name="name"    placeholder="Your name"        required autocomplete="name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email"  id="email"   name="email"   placeholder="your@email.com"   required autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text"   id="subject" name="subject" placeholder="What's this about?" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea            id="message" name="message" placeholder="Your message…"    required></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn btn-primary btn-submit">
+            <i class="fas fa-paper-plane"></i>
+            <span>Send Message</span>
+          </button>
+
+        </form>
+      </div>
+
+      <!-- ── Right: info sidebar ──────────────────────────────── -->
+      <aside class="contact-sidebar">
+
+        <div class="sidebar-card">
+          <h3>Other ways to reach me</h3>
+
+          <a href="mailto:markealdrich@gmail.com" class="contact-method">
+            <div class="contact-method-icon" style="background:#4285f4">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div>
+              <div class="contact-method-label">Email</div>
+              <div class="contact-method-value">markealdrich@gmail.com</div>
+            </div>
+          </a>
+
+          <a href="https://twitch.tv/markaldrichisme" target="_blank" rel="noopener" class="contact-method">
+            <div class="contact-method-icon" style="background:var(--tw)">
+              <i class="fab fa-twitch"></i>
+            </div>
+            <div>
+              <div class="contact-method-label">Twitch chat</div>
+              <div class="contact-method-value">markaldrichisme</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="sidebar-card">
+          <h3>My work</h3>
+          <div class="link-stack">
+            <a href="index.html" class="btn btn-outline">
+              <i class="fas fa-grid-2"></i> Browse Projects
+            </a>
+            <a href="files/mark-aldrich-resume.pdf" download="Mark Aldrich Resume.pdf" class="btn btn-outline">
+              <i class="fas fa-file-arrow-down"></i> Download Résumé
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Mark Aldrich &mdash; All rights reserved.</p>
+  </footer>
+
+  <script>
+    const ENDPOINT = 'https://formspree.io/f/xpqnabnv';
+
+    const form      = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const success   = document.getElementById('form-success');
+    const error     = document.getElementById('form-error');
+    const errorText = document.getElementById('form-error-text');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      // Reset banners & lock button
+      success.hidden = true;
+      error.hidden   = true;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Sending…</span>';
+
+      try {
+        // URLSearchParams encodes as application/x-www-form-urlencoded,
+        // which Formspree's free tier handles more reliably than multipart/form-data.
+        const body = new URLSearchParams(new FormData(form)).toString();
+
+        const res = await fetch(ENDPOINT, {
+          method:  'POST',
+          body:    body,
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'Accept':       'application/json'
+          }
+        });
+
+        const json = await res.json().catch(() => ({}));
+        console.log('Formspree response:', res.status, json);
+
+        if (res.ok) {
+          form.reset();
+          success.hidden = false;
+        } else {
+          const msg = json?.errors?.map(e => e.message).join(', ')
+                   || json?.error
+                   || `Error ${res.status}: ${res.statusText}`;
+          console.error('Formspree rejected submission:', json);
+          errorText.textContent = msg;
+          error.hidden = false;
+        }
+      } catch (networkErr) {
+        console.error('Network error contacting Formspree:', networkErr);
+        errorText.innerHTML =
+          'Could not reach Formspree — check your connection, or email me at '
+          + '<a href="mailto:markealdrich@gmail.com">markealdrich@gmail.com</a>.';
+        error.hidden = false;
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-paper-plane"></i> <span>Send Message</span>';
+      }
+    });
+  </script>
+</body>
+</html>
