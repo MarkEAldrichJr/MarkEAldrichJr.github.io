@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- EDIT: Change this to your project name -->
-  <title>Project Name — Mark Aldrich</title>
-
+  <title>Twitch Controlled Biosphere — Mark Aldrich</title>
   <link rel="icon" href="../favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="../css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
@@ -26,46 +23,21 @@
   </nav>
 
   <main>
-
-    <!-- ── Back link (shows on mobile, duplicates nav) ─────── -->
     <a href="../index.html" class="back-link">
       <i class="fas fa-arrow-left"></i> All Projects
     </a>
 
-
-    <!-- ============================================================
-      HEADER — Title, subtitle, tags
-      ─────────────────────────────────────────────────────────────
-      EDIT: Fill in the project name, a one-line subtitle,
-      and the tags that describe it (add or remove <span class="tag"> as needed).
-      Use class="tag accent" for the most important tag.
-      ============================================================ -->
     <div class="project-header">
-      <h1>Project Name</h1>
-      <p class="subtitle">A short one-liner describing the project.</p>
+      <h1>Twitch Controlled Biosphere</h1>
+      <p class="subtitle">A community-operated robotic camera made of scrap electrical components</p>
       <div class="tag-row">
-        <span class="tag accent">Game</span>      <!-- Main category tag (accent = purple) -->
-        <span class="tag">Indie</span>
-        <span class="tag">2024</span>
-        <!-- Add or remove tags freely -->
+        <span class="tag accent">Robotics</span>
+        <span class="tag">Engineering</span>
+        <span class="tag">2026</span>
       </div>
     </div>
 
-
-    <!-- ============================================================
-      BANNER IMAGE  (optional)
-      ─────────────────────────────────────────────────────────────
-      TO USE: Put your image in the images/ folder (one level up),
-              delete the <div class="banner-placeholder">,
-              and uncomment the <img> line.
-
-      TO REMOVE THIS SECTION: delete both elements below.
-      ============================================================ -->
-    <div class="banner-placeholder">
-      <i class="fas fa-panorama"></i>
-      <span>Replace with banner image (wide landscape works best)</span>
-    </div>
-    <!-- <img src="../images/your-banner.jpg" alt="Project banner" class="project-banner" /> -->
+    <img src="../images/jar-banner.jpg" alt="A cylindrical aquarium/aquatic biosphere with snails and detritus.  Outside is a spinning wooden platform with a motor (top left), 3d printer motor controller (top right), and 3d printed camera jig (lower right)" class="project-banner" />
 
 
     <!-- ============================================================
@@ -75,87 +47,74 @@
 
       <!-- ── LEFT COLUMN: Description, gallery, video ─────────── -->
       <div class="project-main">
-
-
-        <!-- ── About section ─────────────────────────────────── -->
-        <!-- EDIT: Write as many <p> paragraphs as you like.
-             Delete class="placeholder-text" once you have real text. -->
         <div class="prose">
-          <p class="placeholder-text">
-            [WRITE YOUR PROJECT DESCRIPTION HERE — What is this project? What inspired it?
-            What did you make or do? A few paragraphs works well.]
-          </p>
-          <p class="placeholder-text">
-            [OPTIONAL SECOND PARAGRAPH — Could cover the development process,
-            challenges you overcame, or anything else worth sharing.]
+          <p>
+            I have made biospheres throughout my youth, and always wanted to share them with others.  A sealed aquatic environment,
+            they require ample light so the algae and plants within produce enough oxygen and food for the snails, shrimp, and water bugs inside.
+            With this robot, users can join a Twitch stream and enter commands to manipulate the camera's position around the tank, searching for
+            tiny animals, snail eggs, and alien vistas.  It currently streams 48 hours at a time, with frequent visitors who love playing with the camera.
           </p>
 
-          <!-- You can add subheadings like this: -->
-          <!-- <h2>How It Was Made</h2>
-               <p>Your text here...</p> -->
+          <h2>How It Was Made</h2>
+
+          <p>
+            The terrarium itself was made with riverbed soil and water from the streams and ponds around North Eastern Massachusetts.
+          </p>
+
+          <p>
+            The frame and platform are made of scrap plywood, with all electronics and metal structural components made from the old parts of an Ender 3 3D printer.
+            The platform is held up by a lazy-susan, modified to hold the platform securely to the frame, and it is turned by a large 3d-printed gear underneath, meshing with a driven gear on the platform.
+            24v Power gets to the platform by a pair of homemade copper rails that run under the platform, and graphite brushes.
+          </p>
+
+          <p>
+            The motors are controlled via a Creality 1.1.4 control board, which I wiped and rewrote the firmware for, with help from others in the community who mapped out the board's layout.
+            The board firmware was written by me in the Arduino IDE, with bugfixing assisted by Claude.
+          </p>
+
+          <p>
+            The phone is a Motorola Moto g(6), and acts as camera and control.  It collects chat logs from Twitch, converts them into commands,
+            manipulates the camera or sends commands to the motor controller via Bluetooth, and streams music, camera footage,
+            and UI to a Twitch stream via the Camera2 api and a rtmp stream.  I've never worked with Kotlin before, so I organized and wrote all behavior
+            as pseudocode and had Claude interpret the input into a well organized and architectured application.  I then spent two weeks learning Kotlin
+            to debug my well organized and architectured application.
+          </p>
         </div>
 
-
-        <!-- ── Gallery section ───────────────────────────────── -->
-        <!-- EDIT: Replace placeholder items with real images.
-             Add or remove items freely.
-             To add an image:
-               <div class="gallery-item">
-                 <img src="../images/screenshot1.jpg" alt="Description">
-               </div>
-             To remove the gallery: delete the whole block below.    -->
         <h2 class="section-title" style="margin-top: 2.5rem;">Screenshots</h2>
 
         <div class="gallery">
-
-          <div class="gallery-item placeholder">
-            <i class="fas fa-image"></i>
-            <span>Add screenshot</span>
+          <div class="gallery-item">
+            <img src="../images/jar-1.jpg" alt="Snail eggs attached to the edge of the tank, and a VERY pregnant shrimp holding a large, yellow eggs sac.  There's a lot of algae on the edges of the tank,but that will go away once the snails are born.">
           </div>
 
-          <div class="gallery-item placeholder">
-            <i class="fas fa-image"></i>
-            <span>Add screenshot</span>
+          <div class="gallery-item">
+            <img src="../images/jar-2.jpg" alt="The initial setup sitting on my workbench.  Hobbyists should recognize the Ender 3 parts immediately.">
           </div>
 
-          <div class="gallery-item placeholder">
-            <i class="fas fa-image"></i>
-            <span>Add screenshot</span>
+          <div class="gallery-item">
+            <img src="../images/jar-3.jpg" alt="The schematic I used to collect pin uses, and connect the motors and Bluetooth.  Courtesy of R.Reidel">
           </div>
 
-          <!-- Copy a placeholder or add <div class="gallery-item"><img ...></div> -->
-
+          <div class="gallery-item">
+            <img src="../images/jar-4.png" alt="A snail against the glass.  Taken by Ben Wu, one of my viewers.">
+          </div>
         </div>
 
 
         <!-- ── Video section ─────────────────────────────────── -->
-        <!-- EDIT: To embed a YouTube video:
-               1. Open the video on YouTube
-               2. Click Share → Embed
-               3. Copy just the VIDEO ID from the URL (the part after "v=" or "/embed/")
-                  Example: https://www.youtube.com/watch?v=dQw4w9WgXcQ  → ID = dQw4w9WgXcQ
-               4. Replace YOUR_VIDEO_ID below with that ID
-               5. Delete the <div class="video-placeholder"> block
-               6. Uncomment the <div class="video-wrap"> block
-
-             To remove this section: delete both blocks below.           -->
         <h2 class="section-title" style="margin-top: 2.5rem;">Video</h2>
 
-        <div class="video-placeholder">
-          <i class="fab fa-youtube"></i>
-          <span>Paste your YouTube video ID into the embed below, then delete this placeholder</span>
-        </div>
-
-        <!--
         <div class="video-wrap">
           <iframe
-            src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
-            title="Project video"
+            src="https://www.youtube.com/embed/VfY48yxku_k"
+            title="Biosphere Clip: Copulating Snails"
             allowfullscreen
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
           </iframe>
         </div>
-        -->
+
+
 
 
       </div><!-- end .project-main -->
@@ -163,73 +122,47 @@
 
       <!-- ── RIGHT COLUMN: Info sidebar ───────────────────────── -->
       <aside class="project-sidebar">
-
-
-        <!-- Info card — quick facts about the project -->
-        <!-- EDIT: Change the labels and values. Add or remove rows as needed.
-             To remove this card entirely, delete the whole <div class="sidebar-card"> block. -->
         <div class="sidebar-card">
           <h3>Project Info</h3>
 
           <div class="info-row">
             <span class="info-label">Type</span>
-            <span class="info-value">Indie Game</span>      <!-- EDIT -->
+            <span class="info-value">Maker Project</span>
           </div>
+
           <div class="info-row">
-            <span class="info-label">Engine</span>
-            <span class="info-value">Godot</span>           <!-- EDIT or delete row -->
+            <span class="info-label">Languages</span>
+            <span class="info-value">Arduino, C, Kotlin</span>
           </div>
+
           <div class="info-row">
             <span class="info-label">Status</span>
-            <span class="info-value">Released</span>        <!-- EDIT -->
+            <span class="info-value">Running</span>
           </div>
+
           <div class="info-row">
             <span class="info-label">Year</span>
-            <span class="info-value">2024</span>            <!-- EDIT -->
+            <span class="info-value">2026</span>
           </div>
-
-          <!-- Add more rows like this:
-          <div class="info-row">
-            <span class="info-label">Label</span>
-            <span class="info-value">Value</span>
-          </div>
-          -->
         </div>
 
-
-        <!-- Links card — buttons to external pages -->
-        <!-- EDIT: Set href="" to your actual URLs.
-             Add or remove <a class="btn"> elements freely.
-             Remove the whole sidebar-card if there are no links. -->
         <div class="sidebar-card">
           <h3>Links</h3>
+
           <div class="link-stack">
-
-            <a href="#" target="_blank" rel="noopener" class="btn btn-primary">
-              <i class="fas fa-gamepad"></i> Play on Itch.io   <!-- EDIT text & icon -->
+            <a href="https://www.twitch.tv/twitchcontrolledbiosphere" target="_blank" rel="noopener" class="btn btn-primary">
+              <i class="fas fa-gamepad"></i> Watch on Twitch
             </a>
 
-            <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
-              <i class="fab fa-youtube"></i> Watch Trailer      <!-- EDIT text & icon -->
+            <a href="https://www.youtube.com/@TwitchControlledBiosphere" target="_blank" rel="noopener" class="btn btn-outline">
+              <i class="fab fa-youtube"></i> Saved clips
             </a>
-
-            <!-- More button examples:
-            <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
-              <i class="fab fa-github"></i> Source Code
-            </a>
-            <a href="#" target="_blank" rel="noopener" class="btn btn-outline">
-              <i class="fas fa-download"></i> Download
-            </a>
-            -->
-
           </div>
         </div>
 
 
-      </aside><!-- end .project-sidebar -->
-
-    </div><!-- end .project-body -->
-
+      </aside>
+    </div>
   </main>
 
   <footer>
